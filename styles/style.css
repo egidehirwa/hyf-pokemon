@@ -6,7 +6,51 @@
     padding: 0;
 }
 
+:root {
+    --clr-base: #e1f0fd;
+    --clr-base2: #bce0fb;
+    --clr-primary: #0874c1;
+    --clr-text-light: #f0f8ff;
+}
+
 body {
-    background-color: #5a5353;
-    color: whitesmoke;
+    background-color: var(--clr-base);
+    color: var(--clr-primary);
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    border: 1px solid var(--clr-base2);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+button {
+    border: none;
+    background-color: var(--clr-primary);
+    color: var(--clr-text-light);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.image {
+    width: 15rem;
+}
+
+ul {
+    list-style: none;
 }
