@@ -1,4 +1,4 @@
-import createAbilities from "./createAbilities";
+import createAbilities from "./createAbilities.js";
 
 const updatePokemonDom = (pokemonDom, pokemonData) => {
     // Update name
@@ -8,9 +8,8 @@ const updatePokemonDom = (pokemonDom, pokemonData) => {
     pokemonDom.querySelector('.image').src = pokemonData.sprites.front_default;
     pokemonDom.querySelector('.image').alt = pokemonData.name;
 
-    const oldList = pokemonDom.querySelector('#abilities-list');
+    const oldList = pokemonDom.querySelector('#ability-list');
     const newList = createAbilities(pokemonData.abilities);
-
     oldList.replaceWith(newList);
 }
 

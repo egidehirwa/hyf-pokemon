@@ -6,12 +6,24 @@ import updatePokemonDom from "../components/updatePokemonDom.js";
 
 const getPokemonHandler = async() => {
     const value = Number(dom.input.value);
-    const isValidId = value > 0 && value < 1280;
+    const pokemonDomExists = dom.root.querySelector('.container');
 
-    //Error message if wrong input
+    //Check if value exists
+    if(data.oldId === value){
+        dom.input.value = '';
+        return;
+    }
+
+    //Validate ID and show Error message if wrong input
+    const isValidId = value > 0 && value < 1280;
     if(!isValidId){
+        if(pokemonDomExists){
+            pokemonDomExists.remove();
+        }
+        data.oldId = null;
         dom.message.innerText = 'The input needs to be a positive number between 0 and 1280';
         dom.message.classList.add('message');
+        dom.input.value = '';
         dom.root.append(dom.message);
         return;
     }
@@ -25,7 +37,6 @@ const getPokemonHandler = async() => {
     const pokemonData = await getPokemon(value);
 
     // Check if Pokemon exists
-    const pokemonDomExists = dom.root.querySelector('.container');
     if(pokemonDomExists){
         updatePokemonDom(pokemonDomExists, pokemonData);
     } else {
