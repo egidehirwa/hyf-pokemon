@@ -16,6 +16,7 @@
 body {
     background-color: var(--clr-base);
     color: var(--clr-primary);
+    font-family: 'Inter', sans-serif;
 }
 
 section {
@@ -29,6 +30,7 @@ section {
 .main-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
 }
 
@@ -47,10 +49,61 @@ button {
     cursor: pointer;
 }
 
-.image {
-    width: 15rem;
+.container {
+    background-color: var(--clr-base2);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    border: 2px solid var(--clr-primary);
+    gap: 20px;
+    min-width: 500px;
 }
+
+.media-wrapper {
+    border: 2px solid var(--clr-base2);
+    background-color: var(--clr-text-light);
+    border-radius: 5px;
+}
+
+.image {
+    width: 200px;
+    aspect-ratio: 1;
+}
+
+.content-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    width: 100%;
+}
+
+.name {
+    text-transform: uppercase;
+    background-color: var(--clr-text-light);
+    width: 100%;
+    border-radius: 3px;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    text-align: left;
+}
+
+.abilities-title {
+    margin-top: 10px;
+}
+
 
 ul {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+
+    li {
+        text-align: left;
+        text-transform: capitalize;
+    }
 }
